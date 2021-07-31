@@ -75,7 +75,7 @@ public class Equations extends JPanel {
                 display.setText("");
                 start = false;
             } 
-            if (number != "." || display.getText().indexOf(".") == -1) {
+            if (!number.equals(".") || !display.getText().contains(".")) {
                 display.setText(display.getText() + number);
             }  
         }
@@ -97,11 +97,13 @@ public class Equations extends JPanel {
         }
 
         private void calculations(Double x) {
-            if (lastCommand.equals("=")) result = x;
-            else if (lastCommand.equals("+")) result += x; 
-            else if (lastCommand.equals("-")) result -= x; 
-            else if (lastCommand.equals("*")) result *= x; 
-            else if (lastCommand.equals("/")) result /= x;
+            switch (lastCommand) {
+                case "=" -> result = x;
+                case "+" -> result += x;
+                case "-" -> result -= x;
+                case "*" -> result *= x;
+                case "/" -> result /= x;
+            }
             display.setText(" " + result);
         }
     }
