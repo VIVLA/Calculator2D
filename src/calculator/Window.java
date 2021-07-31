@@ -15,7 +15,6 @@ public class Window extends JFrame {
         setTitle("Calculator");
         setResizable(false);
         setLocationRelativeTo(null);
-        add(new Equations());     
-        setVisible(true);
+        add(new Equations());
     }
 }

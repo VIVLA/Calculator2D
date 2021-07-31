@@ -2,6 +2,7 @@ package calculator;
 
 public class Calculator {
     public static void main(String[] args) {
-        new Window();
+        Window window = new Window();
+        window.setVisible(true);
     }
 }
